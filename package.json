@@ -1,0 +1,31 @@
+{
+  "name": "lambdamoo-db-parser",
+  "version": "0.0.1",
+  "description": "parse LambdaMOO db file into json and write json representation to LambdaMOO db file",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha -R mocha-bunyan-json-file-reporter test",
+    "lint": "node_modules/jshint/bin/jshint index.js test/*.js && node_modules/jsonlint/lib/cli.js package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coyotebringsfire/lambdamoo-db-parser.git"
+  },
+  "keywords": [
+    "LambdaMOO"
+  ],
+  "author": "aumkara@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coyotebringsfire/lambdamoo-db-parser/issues"
+  },
+  "homepage": "https://github.com/coyotebringsfire/lambdamoo-db-parser#readme",
+  "devDependencies": {
+    "bunyan": "^1.5.1",
+    "jshint": "^2.8.0",
+    "jsonlint": "^1.6.2",
+    "mocha": "^2.3.3",
+    "mocha-bunyan-json-file-reporter": "git+https://github.com/EricCat/mocha-bunyan-json-file-reporter.git",
+    "should": "^7.1.0"
+  }
+}
