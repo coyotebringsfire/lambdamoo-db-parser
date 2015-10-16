@@ -4,7 +4,7 @@
   "description": "parse LambdaMOO db file into json and write json representation to LambdaMOO db file",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha -R mocha-bunyan-json-file-reporter test",
+    "test": "node_modules/mocha/bin/mocha -R spec test",
     "lint": "node_modules/jshint/bin/jshint index.js test/*.js && node_modules/jsonlint/lib/cli.js package.json"
   },
   "repository": {
@@ -25,7 +25,6 @@
     "jshint": "^2.8.0",
     "jsonlint": "^1.6.2",
     "mocha": "^2.3.3",
-    "mocha-bunyan-json-file-reporter": "git+https://github.com/EricCat/mocha-bunyan-json-file-reporter.git",
     "should": "^7.1.0"
   }
 }
