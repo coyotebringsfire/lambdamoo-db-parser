@@ -4,9 +4,20 @@
 var should 	= require('should'),
 	bunyan 	= require('bunyan');
 
+var logFile = __dirname + '/logs/db2json.log';
+
 describe('db2json', function constructorTest() {
-	var log = bunyan.createLogger({name: "db2json"});
-	log('starting test');
+	var log = bunyan.createLogger({
+		src: true,
+	    name: 'db2json',
+	    streams: [
+	        {
+	            level: 'info',
+	            path: logFile            // log INFO and above to file
+	        }
+	    ]
+	});
+	log.info('starting test');
 
 	it('should return an error if not passed a File object', function doIt() { should.fail(); });
 	it('should return a Promise', function doIt() { should.fail(); });
