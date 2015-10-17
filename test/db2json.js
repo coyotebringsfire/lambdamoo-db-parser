@@ -18,7 +18,10 @@ describe('db2json', function constructorTest() {
 	});
 	log.info('starting test');
 
-	it('should return an error if not passed a File object', function doIt() { should.fail(); });
+	it('should return an error if not passed a string path to a valid db', function doIt() { 
+		var d2j = require('../index.js').db2json;
+		should( d2j("data/world.db") ).not.be.ok();
+	});
 	it('should return a Promise', function doIt() { should.fail(); });
 	it('should reject the returned promise if an error occurs while parsing the file', function doIt() { should.fail(); });
 	describe('object', function objectTest() {
