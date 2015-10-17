@@ -18,11 +18,19 @@ describe('db2json', function constructorTest() {
 	});
 	log.info('starting test');
 
-	it('should return an error if not passed a string path to a valid db', function doIt() { 
+	it('should return an error if not passed a string path to a valid db', function doIt() {
 		var d2j = require('../index.js').db2json;
-		should( d2j("data/world.db") ).not.be.ok();
+		should( d2j({ file:"data/world.db" }) ).not.be.ok();
 	});
-	it('should return a Promise', function doIt() { should.fail(); });
+	it('should return a thennable', function doIt(done) { 
+		var d2j = require('../index.js').db2json;
+		this.timeout(10000);
+		d2j("data/simple.db").
+			then( function onJsonReady(world) {
+				world.should.be.ok();
+				done();
+			});
+	});
 	it('should reject the returned promise if an error occurs while parsing the file', function doIt() { should.fail(); });
 	describe('object', function objectTest() {
 		describe('intro block', function introBlockTest() {

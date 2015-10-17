@@ -6,8 +6,8 @@ module.exports 	= {
 	db2json: function converttoJson(file) {
 		var conversionPromise = Q.defer();
 
-		if( file instanceof String ) {
-			fs.readFile(file, function inputFileRead(err, data) {
+		if( typeof(file) === 'string' ) {
+			fs.readFile(__dirname+'/test/'+file, function inputFileRead(err, data) {
 				if( err ) {
 					conversionPromise.reject(err);
 				} else {
