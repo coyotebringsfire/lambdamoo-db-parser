@@ -26,5 +26,8 @@
     "jsonlint": "^1.6.2",
     "mocha": "^2.3.3",
     "should": "^7.1.0"
+  },
+  "dependencies": {
+    "q": "^1.4.1"
   }
 }
