@@ -41,7 +41,7 @@ describe('db2json', function constructorTest() {
 			}
 		});
 		parser.db2json("data/simple.db")
-			.then( function onJsonReady(world) {
+			.then( function onJsonReady() {
 				should.fail();
 			}, function onReject(err) {
 				err.should.be.ok();
