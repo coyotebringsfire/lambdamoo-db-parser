@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha -R spec test",
-    "lint": "node_modules/jshint/bin/jshint index.js test/*.js && node_modules/jsonlint/lib/cli.js package.json"
+    "lint": "node_modules/jshint/bin/jshint index.js StateMachine.js test/*.js && node_modules/jsonlint/lib/cli.js package.json"
   },
   "repository": {
     "type": "git",
@@ -21,12 +21,13 @@
   },
   "homepage": "https://github.com/coyotebringsfire/lambdamoo-db-parser#readme",
   "devDependencies": {
+    "async": "^1.4.2",
     "bunyan": "^1.5.1",
     "jshint": "^2.8.0",
     "jsonlint": "^1.6.2",
     "mocha": "^2.3.3",
-    "should": "^7.1.0",
-    "rewire": "^2.3.4"
+    "rewire": "^2.3.4",
+    "should": "^7.1.0"
   },
   "dependencies": {
     "q": "^1.4.1"
