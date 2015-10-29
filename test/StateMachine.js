@@ -122,26 +122,26 @@ describe("StateMachine", function() {
 		});
 		it("should process the passed message according to the current state", function doIt(done) { 
 			var StateMachine 	= require('../StateMachine'),
-			testStates 		= [
-				{
-					name: "TESTSTATE0",
-					onMessage: function(msg) {
-						msg.should.equal("TEST0");
+				testStates 		= [
+					{
+						name: "TESTSTATE0",
+						onMessage: function(msg) {
+							msg.should.equal("TEST0");
+						}
+					},{
+						name: "TESTSTATE1",
+						onMessage: function(msg) {
+							msg.should.equal("TEST1");
+						}
+					},{
+						name: "TESTSTATE2",
+						onMessage: function(msg) {
+							msg.should.equal("TEST2");
+							stateMachine.nextState();
+						}
 					}
-				},{
-					name: "TESTSTATE1",
-					onMessage: function(msg) {
-						msg.should.equal("TEST1");
-					}
-				},{
-					name: "TESTSTATE2",
-					onMessage: function(msg) {
-						msg.should.equal("TEST2");
-						stateMachine.nextState();
-					}
-				}
-			],
-			stateMachine 	= new StateMachine( testStates );
+				],
+				stateMachine 	= new StateMachine( testStates );
 
 			stateMachine.on('ready', function() {
 				done();
